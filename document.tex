@@ -1,0 +1,213 @@
+\documentclass[UTF8,a4paper,12pt]{ctexart}
+\usepackage[left=2.50cm, right=2.50cm, top=2.50cm, bottom=2.50cm]{geometry} %页边距
+\CTEXsetup[format={\Large\bfseries}]{section} %设置章标题居左
+ 
+ 
+%%%%%%%%%%%%%%%%%%%%%%%
+% -- text font --
+% compile using Xelatex
+%%%%%%%%%%%%%%%%%%%%%%%
+% -- 中文字体 --
+%\setmainfont{Microsoft YaHei}  % 微软雅黑
+%\setmainfont{YouYuan}  % 幼圆    
+%\setmainfont{NSimSun}  % 新宋体
+%\setmainfont{KaiTi}    % 楷体
+%\setmainfont{SimSun}   % 宋体
+%\setmainfont{SimHei}   % 黑体
+% -- 英文字体 --
+%\usepackage{times}
+%\usepackage{mathpazo}
+%\usepackage{fourier}
+%\usepackage{charter}
+\usepackage{helvet}
+ 
+ 
+\usepackage{amsmath, amsfonts, amssymb} % math equations, symbols
+\usepackage[english]{babel}
+\usepackage{color}      % color content
+\usepackage{graphicx}   % import figures
+\usepackage{url}        % hyperlinks
+\usepackage{bm}         % bold type for equations
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{epstopdf}
+\usepackage{epsfig}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\renewcommand{\algorithmicrequire}{ \textbf{Input:}}     % use Input in the format of Algorithm  
+\renewcommand{\algorithmicensure}{ \textbf{Initialize:}} % use Initialize in the format of Algorithm  
+\renewcommand{\algorithmicreturn}{ \textbf{Output:}}     % use Output in the format of Algorithm  
+ 
+
+ 
+\usepackage{fancyhdr} %设置页眉、页脚
+\pagestyle{plain}
+%\pagestyle{fancy}
+\lhead{}
+\chead{}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+ 
+ 
+%%%%%%%%%%%%%%%%%%%%%%%
+%  设置水印
+%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{draftwatermark}         % 所有页加水印
+%\usepackage[firstpage]{draftwatermark} % 只有第一页加水印
+% \SetWatermarkText{Water-Mark}           % 设置水印内容
+% \SetWatermarkText{\includegraphics{fig/XXX.eps}}         % 设置水印logo
+% \SetWatermarkLightness{0.9}             % 设置水印透明度 0-1
+% \SetWatermarkScale{1}                   % 设置水印大小 0-1    
+
+%参考文献
+\usepackage[backend=biber,style=gb7714-2015ay]{biblatex}
+\addbibresource[location=local]{bib/sample.bib}
+ 
+\usepackage[colorlinks,
+linkcolor=blue,%%修改此处为你想要的颜色
+anchorcolor=blue,%%修改此处为你想要的颜色
+citecolor=blue,%%修改此处为你想要的颜色，例如修改blue为red
+]{hyperref} %bookmarks
+%\hypersetup{colorlinks, bookmarks, unicode} %unicode
+ 
+\newcommand{\degree}{^\circ}
+
+
+
+
+ 
+ 
+ 
+\title{\textbf{小明边的中文小论文}}
+\author{ 小明边 \thanks{学号：1903xxxxxx 学院 专业} }
+\date{\today}
+ 
+\begin{document}
+    \maketitle
+     	\maketitle % need full-width title
+     	\renewcommand{\abstractname}{}%摘要名为空
+     	\begin{abstract}
+     		\noindent %摘要无缩进
+     		{\bf 摘{} 要：}
+     		{\small 这是一篇中文小论文的模版。欢迎大家使用}
+     	\end{abstract}
+
+ \section{引言}
+ 这里是第一章的内容\cite{Liao2018A}。
+ \section{实验方法}
+ \section{实验结果}
+ \subsection{数据}
+ \subsection{图表}
+ \subsubsection{实验条件}
+ \subsubsection{实验过程}
+ \subsection{结果分析}	
+ \section{结论}
+ \section{致谢}
+ 
+ \section*{以下为一些工具}
+ 
+ 你好， \LaTeX 。
+ 
+ \begin{enumerate}
+ 	%$行内公式$$行间公式
+ 	\item 函数$f(x)$由表达式$$f(x)=3x^2+x-1$$定义，请画出其图像。
+ 	
+ 	\item
+ 	勾股定理：
+ 	直角三角形的斜边的平方等于两腰的平方和。
+ 	数学语言表述为：设直角三角形$ABC$，其中 $\angle C=90\degree$，则有：
+ 	%带编号的公式
+ 	\begin{equation}
+ 	AB^2 = BC^2 + AC^2	
+ 	\end{equation}
+ 	证明上述定理。
+ 	
+ 	\item
+ 	求矩阵的逆。
+ 	\[
+ 	\begin{pmatrix}
+ 	1 & 2 & 3 \\
+ 	4 & 5 & 6 \\
+ 	7 & 8 & 9
+ 	\end{pmatrix}
+ 	\]
+ 	
+ 	\item
+ 	求$|A|$
+ 	\[
+ 	A = \begin{bmatrix}
+ 	a_{11} & \dots & a_{1n} \\
+ 	\         & \ddots & \vdots \\
+ 	0 & & a_{nn}
+ 	
+ 	\end{bmatrix}_{n \times n}
+ 	\]
+
+ \end{enumerate}
+ 
+ \begin{align}
+ & ABCDEFGHIJKLMNOPQRSTUVWXYZ \label{eq:alphabet} \\
+ & abcdefghijklmnopqrstuvwxyz \\
+ & \alpha \beta \gamma \delta \epsilon \varepsilon \zeta \eta \theta \lambda \mu \nu \xi \pi \rho \sigma \tau \upsilon \phi \varphi \chi \psi \omega  
+ \end{align}
+ \begin{align}
+ \begin{bmatrix}
+ 1 & 2 \\
+ 3 & 4 \\
+ \end{bmatrix}
+ \begin{matrix}
+ 1 & 2 \\
+ 3 & 4 \\
+ \end{matrix}
+ \end{align}
+ 
+ \begin{equation}
+ A_{t+1} = \arg\min_A \ \mathcal{L}(A,E_t,\Delta\tau_t,W_t,b_t), \nonumber
+ \end{equation}
+ 
+ \begin{equation}
+ \begin{aligned} \label{eq:rasl}
+ \min_{A,E,\Delta \tau} \quad & \sum_{i=1}^{N}||A_i||_* + \lambda ||E_i||_1  \\
+ \mathrm{s.t.} \quad & D_i \circ \tau_i + \sum_{k=1}^{n_i} J_{ik} \Delta \tau_i \epsilon_k \epsilon_k^T = A_i + E_i, \\
+ & i = 1,2,\cdots,N. 
+ \end{aligned}
+ \end{equation}
+ 
+ \begin{table}[htbp]
+ 	\caption{Title of table} \label{tab:table}
+ 	\centering
+ 	\addtolength{\tabcolsep}{-0mm} % 控制列间距
+ 	\begin{tabular}{ccccc}
+ 		\toprule[0.75pt]	% package booktabs
+ 		\multicolumn{4}{c}{table head} \\
+ 		\midrule[0.5pt]	% package booktabs
+ 		\multirow{4}{*}{text} & 1 & 2 & 3 & 4 \\  % package multirow
+ 		& 5 & 6 & 7 & 8 \\
+ 		\cmidrule[0.5pt]{2-4}	% package booktabs
+ 		& 9 & 10 & 11 & 12 \\
+ 		& 13 & 14 & 15 & 16 \\
+ 		\bottomrule[0.75pt]	% package booktabs
+ 	\end{tabular}
+ \end{table}
+ 引用： Eq. \eqref{eq:alphabet}, Fig. \ref{figure:fig1},  \\
+ 
+ 
+ \begin{algorithm}
+ 	\caption{Title of the Algorithm}
+ 	\label{algo:ref}
+ 	\begin{algorithmic}[1]
+ 		\REQUIRE some words.  % this command shows "Input"
+ 		\ENSURE ~\\           % this command shows "Initialized"
+ 		some text goes here ... \\
+ 		\WHILE {\emph{not converged}}
+ 		\STATE ... \\  % line number at left side
+ 		\ENDWHILE
+ 		\RETURN this is the lat part.  % this command shows "Output"
+ 	\end{algorithmic}
+ \end{algorithm}
+ 
+\renewcommand\refname{参考文献}
+%\bibliomatter
+\printbibliography
+\end{document}
