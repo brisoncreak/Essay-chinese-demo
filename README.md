@@ -1,6 +1,7 @@
 # Essay-chinese-demo
 Latex中文小论文模版 排版清爽干净 简单易用 
 
+目录下.pdf 预览效果
 
 使用方法：TexStudio中打开.tex文件 编译即可
 ---
