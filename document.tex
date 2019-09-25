@@ -59,18 +59,33 @@
 % \SetWatermarkText{\includegraphics{fig/XXX.eps}}         % 设置水印logo
 % \SetWatermarkLightness{0.9}             % 设置水印透明度 0-1
 % \SetWatermarkScale{1}                   % 设置水印大小 0-1    
+\usepackage{subfig}
+ 
+\usepackage{fancyhdr} %设置页眉、页脚
+\pagestyle{plain}
+%\pagestyle{fancy}
+
 
 %参考文献
 \usepackage[backend=biber,style=gb7714-2015ay]{biblatex}
 \addbibresource[location=local]{bib/sample.bib}
- 
+
+
 \usepackage[colorlinks,
-linkcolor=blue,%%修改此处为你想要的颜色
-anchorcolor=blue,%%修改此处为你想要的颜色
-citecolor=blue,%%修改此处为你想要的颜色，例如修改blue为red
-]{hyperref} %bookmarks
+linkcolor=black,%%修改此处为你想要的颜色
+anchorcolor=blue,%%修改此处为你想要的颜色red/blue/green/black/white/cyan/magenta/yellow
+citecolor=black,%%修改此处为你想要的颜色，例如修改blue为red
+urlcolor=cyan]{hyperref} %bookmarks
 %\hypersetup{colorlinks, bookmarks, unicode} %unicode
- 
+
+
+\usepackage{datetime} %日期
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+
+\usepackage[font=small,labelsep=period]{caption} \captionsetup{figurename=图,tablename=表}
+
+\newcommand{\reffig}[1]{（图\ref{#1}）}
+
 \newcommand{\degree}{^\circ}
 
 
@@ -207,7 +222,38 @@ citecolor=blue,%%修改此处为你想要的颜色，例如修改blue为red
  	\end{algorithmic}
  \end{algorithm}
  
+ ~\\ %空行
+ 
+ 插入单张图片\reffig{fig:pair}：
+ 
+  \begin{figure}[htbp]
+  	\centering
+  	\includegraphics[width=0.55\textwidth]{picture/pair.jpeg} 
+  	\caption{结对编程} %caption是图片的标题
+  	\label{fig:pair} %此处的label相当于一个图片的专属标志，目的是方便上下文的引用
+  \end{figure}
+  
+ 插入浮动图片\reffig{fig:pair-float}，第一张\reffig{fig:float-a}和第二张\reffig{fig:float-b}：
+ 
+  \begin{figure}[htbp]
+  \subfloat[单图.\label{fig:float-a}]{\includegraphics[width=7cm]{picture/pair.jpeg}}\quad
+  \subfloat[浮动.\label{fig:float-b}]{\includegraphics[width=7cm]{picture/pair.jpeg}}\quad
+  \caption{结对编程float}
+  \label{fig:pair-float}
+  \end{figure}
+  
+  \begin{itemize}
+  	\setlength{\itemsep}{0pt}
+  	\setlength{\parsep}{0pt}
+  	\setlength{\parskip}{0pt}
+  	\item[-] 迭代站会不超过15分钟
+  	\item[-] 需求描述哦每次不超过1小时
+  	\item[-] 展示会1小时以内
+  	\item[-] 回顾会不超过两小时
+  \end{itemize}
+ 
 \renewcommand\refname{参考文献}
 %\bibliomatter
+\nocite{*} %打印全部参考文献
 \printbibliography
 \end{document}
