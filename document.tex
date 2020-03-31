@@ -1,3 +1,4 @@
+%% 导言区
 \documentclass[UTF8,a4paper,12pt]{ctexart}
 \usepackage[left=2.50cm, right=2.50cm, top=2.50cm, bottom=2.50cm]{geometry} %页边距
 \CTEXsetup[format={\Large\bfseries}]{section} %设置章标题居左
@@ -66,7 +67,8 @@
 %\pagestyle{fancy}
 
 
-%参考文献
+% 参考文献
+% 注意参考文献请用Biber编译，不能使用BiberTex或者BiberTex-8
 \usepackage[backend=biber,style=gb7714-2015ay]{biblatex}
 \addbibresource[location=local]{bib/sample.bib}
 
@@ -98,6 +100,7 @@ urlcolor=cyan]{hyperref} %bookmarks
 \author{ 小明边 \thanks{学号：1903xxxxxx 学院 专业} }
 \date{\today}
  
+ %% 正文区
 \begin{document}
     \maketitle
      	\maketitle % need full-width title
@@ -205,7 +208,7 @@ urlcolor=cyan]{hyperref} %bookmarks
  		\bottomrule[0.75pt]	% package booktabs
  	\end{tabular}
  \end{table}
- 引用： Eq. \eqref{eq:alphabet}, Fig. \ref{figure:fig1},  \\
+ 引用： Eq. \eqref{eq:alphabet}, Fig. \ref{figure:pair},  \\
  
  
  \begin{algorithm}
